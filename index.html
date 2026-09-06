@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コクボル</title>
+  <link rel="stylesheet" href="style.css">
+    <style>
+      .profile {
+        width: 200px;
+        height: auto;
+        max-width: 100%;
+        border-radius: 8px;
+        display: block;
+      }
+    /* コクボル用のスタイル */
+    #kokboru { margin-top: 2rem; }
+    .kok-image { width: 100%; max-width: 700px; height: auto; border-radius: 6px; display:block; margin: 0.5rem 0; }
+    .video-project { width: 100%; max-width: 700px; aspect-ratio: 16 / 9; height: auto; object-fit: cover; border: 0; border-radius: 8px; margin: 1rem 0; background: #000; }
+    #more { margin-top: 0.5rem; background:#f8f8f8; padding:0.6rem; border-radius:4px; }
+    #moreBtn { cursor:pointer; padding:0.4rem 0.8rem; border-radius:4px; }
+    table { border-collapse: collapse; margin-top: 1rem; }
+    th, td { border: 1px solid #999; padding: 0.5rem 1rem; text-align: left; }
+    th { background: #f2f2f2; }
+    form { max-width: 500px; margin-top: 1.5rem; }
+    form label { display: block; margin-top: 0.8rem; }
+    form input, form textarea { width: 100%; box-sizing: border-box; padding: 0.5rem; margin-top: 0.3rem; }
+    form button { margin-top: 0.8rem; padding: 0.5rem 1rem; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+  <!-- 自己紹介セクション -->
+  <section>
+      <img class="profile" src="kut.jpg" alt="自分の写真">
+    <h1>こんにちは、[クットマン]です</h1>
+    
+    <a href="about.html">私についての詳細な情報</a>
+
+    <table>
+      <tr>
+        <th>項目</th>
+        <th>内容</th>
+      </tr>
+      <tr>
+        <td>出身国</td>
+        <td>キルギス</td>
+      </tr>
+      <tr>
+        <td>現在の学校</td>
+        <td>日本工学院</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- コクボル（Kok-Boru）セクション -->
+  <section id="kokboru">
+    <h2>母国の伝統的なスポーツについて紹介します。</h2>
+
+    <p>コクボルは中央アジアの伝統的な馬上競技で、チームワークと力が求められます。祭りや大会で大切にされている文化行事です。</p>
+
+    <p>古くから伝わる競技で、馬術の技術とチームワークね、そして勇気が重要視されます。</p>
+
+    <h2>コクボルの歴史</h2>
+    
+    昔、キルギス人をはじめとする遊牧民は、**オオカミ（ボル）**を神聖で力強い動物として考えていました。狩りの際にオオカミを捕まえ、馬に乗りながら互いに奪い合う行為が、次第に現在の競技へと発展したと考えられています。
+    コク・ボルの初期の形には、現在のような決められたルールはありませんでした。若者たちは、馬上での力強さや敏捷性、馬を操る技術を競い合っていました。また、この遊びは戦いの際に必要となる技術を身につけることにも役立っていたとされています。
+    <img class="kok-image" src="history.jpg" alt="コクボルの競技場の写真">
+    
+    <h2>エージェルと試合の構成</h2>
+
+    <ul>
+      <li>二つのチームがフィールドに出て、それぞれに 12人の騎手 がいる。</li>
+      <li>実際にプレーするのは各チームから 4人ずつ。</li>
+      <li>選手は試合中に交代して入ることができます。</li>
+      <li>試合は通常20分ずつの2～3ピリオドに分けられ、各ピリオドの間に休憩があります。</li>
+      <li>ウラクト（山羊の死骸や代用の人形） は地面から、または相手の手から奪うことができる。</li>
+      <li>奪ったウラクトを相手チームの タイカザン（得点エリア） に入れるとポイントになる。</li>
+      <li>試合終了時により多くのポイントを獲得したチームが勝利する。</li>
+    </ul>
+
+    <img class="kok-image" src="make.png" alt="コクボルの写真">
+
+    <h2>競技場</h2>
+    <img class="kok-image" src="place.jpg" alt="コクボルの競技場の写真">
+      
+    <video class="video-project" autoplay muted loop playsinline preload="metadata" poster="history.jpg">
+      <source src="sake.mp4?v=20260906" type="video/mp4">
+      お使いのブラウザは動画再生に対応していません。
+    </video>
+
+    <video class="video-project" autoplay muted loop playsinline preload="metadata" poster="place.jpg">
+      <source src="sake.mp4?v=20260906" type="video/mp4">
+      お使いのブラウザは動画再生に対応していません。
+    </video>
+    
+    <ul>
+      <li>起源：中央アジア</li>
+      <li>目的：得点を競う（チーム戦）</li>
+      <li>特徴：馬術技術と集団行動</li>
+    </ul>
+
+    <button id="moreBtn">詳しく見る</button>
+    <div id="more" style="display:none">
+      <p>ここに歴史、ルールの詳細、現代での位置づけなどを書けます。例えばチーム構成や試合時間、用具について説明してください。</p>
+    </div>
+  </section>
+
+  <script>
+    const videos = document.querySelectorAll('.video-project');
+
+    function playVideos() {
+      videos.forEach((video) => {
+        if (video.readyState >= 2) {
+          video.muted = true;
+          video.play().catch(() => {});
+        }
+      });
+    }
+
+    function pauseVideos() {
+      videos.forEach((video) => {
+        video.pause();
+      });
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        pauseVideos();
+      } else {
+        playVideos();
+      }
+    });
+
+    window.addEventListener('load', playVideos);
+
+    document.getElementById('moreBtn').addEventListener('click', function () {
+      const more = document.getElementById('more');
+      more.style.display = (more.style.display === 'none') ? 'block' : 'none';
+    });
+
+  </script>
+
+  <p>ご質問がありましたら、下記の番号へご連絡ください：
+    <a href="tel:07012345678">070-1234-5678</a>
+  </p>
+
+  <form method="post" action="https://ss655762.stars.ne.jp/php/result.php">
+    <label for="name">お名前</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">メールアドレス</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">ご質問</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">送信</button>
+  </form>
+
+  <footer>
+    <p>Copyright © 2026 k026c1073</p>
+  </footer>
+
+</body>
+</html>
