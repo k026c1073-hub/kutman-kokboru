@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>私について</title>
+  <style>
+    body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    .about-layout {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .about-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .image-column {
+      flex: 0 0 260px;
+    }
+
+    .profile {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .about-row > .profile {
+      width: 260px;
+      flex: 0 0 260px;
+    }
+
+    .second-photo {
+      flex: 0 0 260px;
+    }
+
+    .second-photo .profile {
+      width: 260px;
+      flex: 0 0 260px;
+    }
+
+    .childhood-text {
+      margin: 0;
+    }
+
+    .text-column {
+      flex: 1;
+    }
+
+    @media (max-width: 650px) {
+      .about-layout {
+        flex-direction: column;
+      }
+
+      .about-row {
+        flex-direction: column;
+      }
+
+      .image-column,
+      .second-photo {
+        flex-basis: auto;
+        width: 100%;
+      }
+    }
+
+    a {
+      color: #0645ad;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="about-layout">
+      <div class="about-row">
+        <img class="profile" src="images/kut.jpg" alt="自分の写真">
+        <div class="text-column">
+          <h1>私について</h1>
+
+          <p>私はキルギス出身で、現在は日本でIT分野を勉強しています。</p>
+
+          <ul>
+            <li>出身国：キルギス</li>
+            <li>現在の学校：[日本工学院]</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="about-row">
+        <div class="second-photo">
+          <img class="profile" src="images/too.jpg" alt="自分の写真">
+        </div>
+        <div class="text-column childhood-text">
+          <h2>私の子ども時代について</h2>
+          <p>私の幼少期は、山々に抱かれた村で、澄んだ空気と雄大な自然に囲まれて育ちました。家族や友人との時間を大切にし、地域の伝統や文化に触れることで、豊かな人間性を育むことができました。</p>
+        </div>
+      </div>
+
+      <div class="about-row">
+        <img class="profile" src="images/ulak.jpg" alt="コクボルの写真">
+        <div class="text-column">
+          <h2>コクボルへの興味</h2>
+          <p>私の馬への興味は幼い頃から芽生え、よく馬に乗ったり、ウラク（コクボル）などの遊びをしていました。</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html">メインページに戻る</a>
+  </main>
+
+  <footer>
+    <p>Copyright © 2026 k026c1073</p>
+  </footer>
+
+</body>
+</html>
